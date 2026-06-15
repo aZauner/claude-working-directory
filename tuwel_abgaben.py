@@ -75,8 +75,6 @@ for ev in events:
 
 results.sort(key=lambda x:x[0])
 
-os.system("clear")
-
 if not results:
     print("Keine Abgaben in den nächsten 14 Tagen.")
 else:
