@@ -81,12 +81,8 @@ if not results:
     print("Keine Abgaben in den nächsten 14 Tagen.")
 else:
     print("TUWEL Abgaben – nächste 14 Tage:\n")
-    for i,(dt,s,cat) in enumerate(results,1):
+    for dt,s,cat in results:
         dm=dt.astimezone(MESZ); diff=dt-NOW
-        print(f"  {i}. {clean(s)}")
-        print(f"     Kurs:    {course(cat)}")
-        print(f"     Fällig:  {dm.strftime('%d.%m.%Y %H:%M')} MESZ")
-        print(f"     In:      {tuntil(diff)}")
-        print()
+        print(f"  • {clean(s)} – {course(cat)} – {dm.strftime('%d.%m.%Y %H:%M')} MESZ (in {tuntil(diff)})")
 
 
